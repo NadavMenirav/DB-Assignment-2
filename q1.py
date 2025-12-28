@@ -6,7 +6,7 @@ if __name__ == '__main__':
         host="localhost",
         user="root",
         password="root",
-        database="## PUT THE CORRECT DATABASE HERE IF NEEDED ##",
+        database="mysql",
         port='3307',
     )
 
@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     # Execute the SQL query
     cursor.execute("""
-    ## PUT YOUR QUERY ##
+    CREATE DATABASE biu_shoes
     """)
 
     # !!!Commit the transaction to save the changes to the database!!!
