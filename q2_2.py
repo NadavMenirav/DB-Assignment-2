@@ -15,12 +15,12 @@ if __name__ == '__main__':
 
     # Execute the SQL query
     # Creating the new table (only if it doesn't exist) which contains the given variables
-    # Assuring the name and price are not none and the id is the primary key.
+    # Assuring size_id is the primary key and european_number is not null
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS shoe (
-            shoe_id INT PRIMARY KEY,
-            shoe_name VARCHAR(31) NOT NULL,
-            price SMALLINT NOT NULL
+        CREATE TABLE IF NOT EXISTS size (
+            size_id INT PRIMARY KEY,
+            european_number TINYINT NOT NULL,
+            us_number TINYINT
         );
     """)
 
