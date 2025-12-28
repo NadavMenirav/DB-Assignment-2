@@ -6,7 +6,7 @@ if __name__ == '__main__':
         host="localhost",
         user="root",
         password="root",
-        database="mysql", # Creating a new database so we cannot use database="biu_shoes"
+        database="biu_shoes",
         port='3307',
     )
 
@@ -14,9 +14,12 @@ if __name__ == '__main__':
     cursor = mydb.cursor()
 
     # Execute the SQL query
-    # We use create if not exists to not create twice and cause an error
     cursor.execute("""
-    CREATE DATABASE IF NOT EXISTS biu_shoes;
+        CREATE TABLE IF NOT EXISTS shoe (
+            shoe_id INT PRIMARY KEY,
+            shoe_name VARCHAR(31) NOT NULL,
+            price SMALLINT NOT NULL
+        );
     """)
 
     # !!!Commit the transaction to save the changes to the database!!!
