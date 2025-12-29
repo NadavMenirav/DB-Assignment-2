@@ -19,10 +19,10 @@ if __name__ == '__main__':
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS shoe_size (
             shoe_id INT,
-            shoe_size INT,
-            PRIMARY KEY(shoe_id, shoe_size),
+            size_id INT,
+            PRIMARY KEY(shoe_id, size_id),
             FOREIGN KEY (shoe_id) REFERENCES shoe(shoe_id),
-            FOREIGN KEY (shoe_size) REFERENCES size(size_id)
+            FOREIGN KEY (size_id) REFERENCES size(size_id)
         );
     """)
 
