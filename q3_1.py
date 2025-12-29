@@ -17,7 +17,8 @@ if __name__ == '__main__':
     # Using INSERT INTO to populate the shoe table using the data given in the assignment pdf
     cursor.execute("""
         INSERT INTO shoe (shoe_id, shoe_name, price) 
-        VALUES     (1, 'Air CS 0/1', 150),
+        VALUES     
+                   (1, 'Air CS 0/1', 150),
                    (2, 'Yeezy Gauss 360', 220),
                    (3, '1B All Star', 60),
                    (4, 'Jordan 1 Engineering', 170),
