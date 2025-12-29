@@ -6,7 +6,7 @@ if __name__ == '__main__':
         host="localhost",
         user="root",
         password="root",
-        database="biu_shoes",
+        database="## PUT THE CORRECT DATABASE HERE IF NEEDED ##",
         port='3307',
     )
 
