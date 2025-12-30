@@ -14,12 +14,13 @@ if __name__ == '__main__':
     cursor = mydb.cursor()
 
     # Execute the SQL query
+    # Returning for each shoe the amount of sizes available in stock. Using left join so that we return 0 for shoes
+    # without available sizes
     cursor.execute("""
-        SELECT sh.shoe_name shoe_name, COUNT(si.size_id) amount_sizes_available
+        SELECT sh.shoe_name, COUNT(ss.shoe_id) amount_sizes_available
         FROM shoe sh 
         LEFT JOIN shoe_size ss ON sh.shoe_id = ss.shoe_id
-        LEFT JOIN size si ON ss.size_id = si.size_id
-        GROUP BY sh.shoe_id
+        GROUP BY sh.shoe_id;
     """)
 
     # Fetch and print all results separated by commas

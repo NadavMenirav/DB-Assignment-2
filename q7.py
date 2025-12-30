@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # For each customer, we return their first name, last name, and the total amount of money he spent (can be zero)
     # Using LEFT JOIN for the case where a customer has not made any purchases and coalesce to return 0 in that case
     cursor.execute("""
-        SELECT c.first_name first_name, c.last_name last_name, COALESCE(SUM(s.price), 0) total_amount_spent
+        SELECT c.first_name, c.last_name, COALESCE(SUM(s.price), 0) total_amount_spent
         FROM customer c
          LEFT JOIN order_customer oc ON c.customer_id = oc.customer_id 
          LEFT JOIN order_shoe os ON oc.order_id = os.order_id 

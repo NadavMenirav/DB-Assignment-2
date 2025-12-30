@@ -18,7 +18,7 @@ if __name__ == '__main__':
     # display the shoes that have been sold
     cursor.execute("""
         CREATE VIEW total_sales_per_shoe AS
-        SELECT shoe.shoe_id shoe_id, shoe.shoe_name shoe_name, SUM(shoe.price) total_revenue
+        SELECT shoe.shoe_id, shoe.shoe_name, SUM(shoe.price) total_revenue
         FROM shoe JOIN order_shoe ON shoe.shoe_id = order_shoe.shoe_id
         GROUP BY shoe.shoe_id;
     """)

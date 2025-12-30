@@ -22,7 +22,7 @@ if __name__ == '__main__':
         JOIN shoe_size ss ON sh.shoe_id = ss.shoe_id
         JOIN size si ON ss.size_id = si.size_id
         GROUP BY si.size_id
-        ORDER BY average_price DESC
+        ORDER BY average_price DESC;
     """)
 
     # Fetch and print all results separated by commas
